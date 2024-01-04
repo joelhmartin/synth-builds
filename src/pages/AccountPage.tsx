@@ -19,7 +19,7 @@ const AccountPage = () => {
             }}
             templateColumns={{
               base: "1fr",
-              lg: "1fr 1fr",
+              lg: ".6fr 1fr ",
             }}
           >
 

@@ -7,10 +7,15 @@ function FiberCanvas() {
   return (
     <>
       <Canvas
+        orthographic
         style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }}
         camera={{
+          left: -5,
+          right: -10,
+          top: -10,
+          bottom: -5,
           fov: 64,
-          position: [0, 0, 10],
+          zoom: 100
         }}
       >
         <Experience />

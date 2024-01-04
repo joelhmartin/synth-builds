@@ -3,6 +3,12 @@
   src: url("/fonts/VCR_OSD_MONO_1.001.ttf");
 }
 
+@font-face {
+  font-family: SCRATCH;
+  src: url("/fonts/donner/donner.ttf");
+}
+
+
 body,
 html {
   padding: 0;
@@ -47,12 +53,16 @@ html {
   width: 8.5%
 }
 
-
+/* FONTS */
 .VCRFont {
   font-family: VCR;
 }
 
+.SCRATCHFont {
+  font-family: SCRATCH;
+}
 
+/* ANIMATIONS */
 @keyframes bobAndFade {
   0%, 100% {
     transform: translateY(0);

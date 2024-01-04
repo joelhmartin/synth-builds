@@ -23,25 +23,22 @@ const SynthScene = () => {
 
   const screenH = size.height / 100;
   const screenW = size.width / 100;
+  // const screenZ = 10
 
   console.log(screenH, screenW);
 
   useEffect(() => {
     if (location === "/") {
       setIsChillin(true);
-      gsap.to(synthRef.current.position, {
-        duration: 1,
-        x: -screenW / 1.85,
-        y: -screenH / 1.85,
-        z: 0,
-      });
+      gsap.to(synthRef.current.position, { duration: 1, x: -screenW / 2.4,  y: -screenH / 2.4 , z: 0,});
       gsap.to(synthRef.current.scale, { duration: 1, x: 0.4, y: 0.4, z: 0.4 });
+      gsap.to(synthRef.current.rotation, { duration: 1, x: .2, y: 0, z: 0 })
     } else if (location === "/account") {
       if (token) {
         setIsChillin(true);
-        gsap.to(synthRef.current.position, { duration: 1, x: 9.4, y: 2, z: 0 });
+        gsap.to(synthRef.current.position, { duration: 1, x: 7.5, y: 1.8, z: 0 });
         gsap.to(synthRef.current.rotation, { duration: 1, x: -5, y: 0, z: 0 });
-        gsap.to(synthRef.current.scale, { duration: 1, x: 1, y: 1, z: 1 });
+        gsap.to(synthRef.current.scale, { duration: 1, x: .5, y: .5, z: .5 });
       } else {
         setIsChillin(false);
         gsap.to(synthRef.current.position, { duration: 1, x: 0, y: 0, z: 0 });
@@ -50,7 +47,8 @@ const SynthScene = () => {
       }
     } else if (location === "/login") {
       gsap.to(synthRef.current.position, { duration: 1, x: 0, y: -4, z: 0 });
-      gsap.to(synthRef.current.scale, { duration: 1, x: 1, y: 1, z: 1 });
+      gsap.to(synthRef.current.rotation, { duration: 1, x: .2, y: 0, z: 0 });
+      gsap.to(synthRef.current.scale, { duration: 1, x: .5, y: .5, z: .5 });
     } else if (location.startsWith("/patches")) {
       setIsChillin(false);
       gsap.to(synthRef.current.position, { duration: 1, x: -6.5, y: 0, z: 0 });
@@ -89,6 +87,7 @@ const SynthScene = () => {
         scale={0.4}
         position={[-9.5, -5, 0.01]}
       >
+
         <primitive object={synth.scene} material={MeshToonMaterial} />
         {location === "/account" && !token && (
           <Html transform position={[0, 0.24, 1]}>
@@ -97,9 +96,8 @@ const SynthScene = () => {
             </Box>
           </Html>
         )}
+
       </group>
-
-
     </>
   );
 };
