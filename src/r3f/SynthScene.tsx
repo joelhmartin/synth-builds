@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { Html, Sparkles, Text, useGLTF } from "@react-three/drei";
+import { Html, useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -59,7 +59,7 @@ const SynthScene = () => {
     }
   }, [location, token]);
 
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (isChillin) {
       if (synthRef.current.rotation.y >= Math.PI * 2) {
         synthRef.current.rotation.y = 0;

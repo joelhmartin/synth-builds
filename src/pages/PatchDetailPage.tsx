@@ -1,18 +1,15 @@
-import { useState } from "react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import { useLocation, useParams } from "wouter";
-import usePatch from "../hooks/usePatch";
-import { Fade, Grid, GridItem } from "@chakra-ui/react";
-import Profile from "../components/profile/Profile";
 import PatchDetail from "../components/patchDetail/PatchDetail";
+import usePatch from "../hooks/usePatch";
 
 
 const PatchDetailPage = () => {
   const { _id } = useParams();
   const { data: patch } = usePatch(_id!);
-  const [show, setShow] = useState(false);
-  const [location, setLocation] = useLocation();
+  // const [show, setShow] = useState(false);
+  const [_location, setLocation] = useLocation();
 
-  const handleToggle = () => setShow(!show);
 
   if (!_id) {
     setLocation("/");
