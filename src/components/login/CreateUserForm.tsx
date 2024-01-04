@@ -44,7 +44,7 @@ const CreateUserForm = (formType: Props) => {
 
   const [show, setShow] = useState(false);
 
-  const [location, setLocation] = useLocation();
+  const [_location, setLocation] = useLocation();
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {

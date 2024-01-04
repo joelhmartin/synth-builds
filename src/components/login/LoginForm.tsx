@@ -1,8 +1,6 @@
 import {
   Button,
   Flex,
-  FormControl,
-  HStack,
   Input,
   InputGroup,
   InputLeftElement,
@@ -43,7 +41,7 @@ const LoginForm = (formType: Props) => {
   const [whoops, setWhoops] = useState(false);
   const login = useAuthStore((s) => s.login);
   const [show, setShow] = useState(false);
-  const [location, setLocation] = useLocation();
+  const [_location, setLocation] = useLocation();
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {

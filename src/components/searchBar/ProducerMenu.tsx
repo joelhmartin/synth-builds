@@ -4,7 +4,7 @@ import { IoArrowBack, IoArrowDown } from "react-icons/io5";
 import useSynthStore from "../../store";
 
 const ProducerMenu = () => {
-  const { data: patches, error, isLoading } = usePatches();
+  const { data: patches } = usePatches();
   const setProducer = useSynthStore(s => s.setProducer)
 
   return (

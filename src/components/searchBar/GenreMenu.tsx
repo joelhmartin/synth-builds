@@ -4,7 +4,7 @@ import { IoArrowBack, IoArrowDown } from "react-icons/io5";
 import useSynthStore from "../../store";
 
 const GenreMenu = () => {
-  const { data: patches, error, isLoading } = usePatches();
+  const { data: patches } = usePatches();
   const setGenre = useSynthStore(s => s.setGenre)
 
   return (
