@@ -1,0 +1,1 @@
+export const prophetColors = ['#1A181A','#FEFEFE','#974E39','#F9F9F9','#706E71', '#D2D1D2', '#4A484B', ]
