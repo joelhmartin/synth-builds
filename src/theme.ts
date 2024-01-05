@@ -15,8 +15,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: `'Open Sans', sans-serif`,
-    body: `'Raleway', sans-serif`,
+    heading: `'VCR', sans-serif`,
+    body: `'VCR', sans-serif`,
     custom: `'VCR', sans-serif`,
   },
   colors: {

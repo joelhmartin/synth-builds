@@ -19,17 +19,17 @@ const Profile = () => {
         fontWeight="bold"
       >
         <GridItem pl="2" area={"header"}>
-          <Text fontSize={"6xl"} className="VCRFont">
+          <Text fontSize={"6xl"}>
             Sup {user}
           </Text>
         </GridItem>
         <GridItem pl="2" area={"nav"}>
-          <Text fontSize={"xl"} className="VCRFont">
+          <Text fontSize={"xl"}>
             My Uploads
           </Text>
         </GridItem>
         <GridItem pl="2" area={"main"}>
-          <Text fontSize={"xl"} className="VCRFont">
+          <Text fontSize={"xl"}>
             Whats new
           </Text>
         </GridItem>

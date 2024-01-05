@@ -51,7 +51,7 @@ function SynthDrawer({ patch }: Props) {
               spacing={4}
               align="stretch"
             >
-              <Text className="VCR">Genre: {patch.genre}</Text>
+              <Text>Genre: {patch.genre}</Text>
               <Text>Producer: {patch.producer}</Text>
               <Text>Synth: {patch.synth}</Text>
               <Spacer />

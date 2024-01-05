@@ -13,6 +13,7 @@ import {
   CardFooter,
   Center,
   AspectRatio,
+  Heading,
 } from "@chakra-ui/react";
 
 interface Props {
@@ -24,14 +25,14 @@ const SynthCard = ({ patch }: Props) => {
 
   return (
     <>
-      <Card className="VCRFont" >
+      <Card>
         <CardHeader height={"6rem"}>
-          <h1>{patch.song}</h1>
+          <Heading>{patch.song}</Heading>
         </CardHeader>
         <CardBody>
           <AspectRatio>
             <Image
-              borderRadius={'lg'}
+              borderRadius={"lg"}
               src={patch.file}
               boxSize="300px"
               objectFit="cover"

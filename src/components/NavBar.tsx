@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <>
       <header>
-        <div className="header-inner VCRFont">
+        <div className="header-inner">
           <Link to="/">
             <img className="logo" src="/images/synthesizerBig.png" alt="" />
           </Link>

@@ -13,7 +13,7 @@ const LoginPage = () => {
     return (
       <Fade in={true}>
         <VStack>
-          <Box className="VCRFont">Logged in as {user}</Box>
+          <Box>Logged in as {user}</Box>
           <Button onClick={logout}>Logout ?</Button>
           <Button>
             <Link to="/account">Go to account ?</Link>
