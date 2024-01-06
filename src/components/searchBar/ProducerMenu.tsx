@@ -4,7 +4,7 @@ import { IoArrowBack, IoArrowDown } from "react-icons/io5";
 import useSynthStore from "../../store";
 
 const ProducerMenu = () => {
-  const { data: patches } = usePatches();
+  const { data } = usePatches();
   const setProducer = useSynthStore(s => s.setProducer)
 
   return (
@@ -20,7 +20,7 @@ const ProducerMenu = () => {
             Producer
           </MenuButton>
           <MenuList height={200} overflow={"scroll"}>
-          {patches?.filter((patch, index, self) => {
+          {data?.filter((patch, index, self) => {
               return self.findIndex((p) => p.producer === patch.producer) === index
             }).map((patch) => (
               <MenuItem key={patch._id} onClick={() => setProducer(patch.producer)}>{patch.producer}</MenuItem>

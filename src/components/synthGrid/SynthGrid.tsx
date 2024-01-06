@@ -5,7 +5,7 @@ import SynthCardContainer from "./SynthCardContainer";
 import SynthCardSkeleton from "./SynthCardSkeleton";
 
 const SynthGrid = () => {
-  const { data: patches, error, isLoading } = usePatches();
+  const { data, error, isLoading } = usePatches();
 
   const skeletons = [1, 2, 3, 4, 5, 6];
 
@@ -27,7 +27,7 @@ const SynthGrid = () => {
               </SynthCardContainer>;
             })}
 
-          {patches?.map((patch) => (
+          {data?.map((patch) => (
             <SynthCardContainer key={patch._id}>
               <SynthCard patch={patch} />
             </SynthCardContainer>
