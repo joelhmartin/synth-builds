@@ -2,10 +2,10 @@ import { Text, useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Group, Mesh, MeshToonMaterial } from "three";
+import { MeshToonMaterial } from "three";
 import { useLocation } from "wouter";
 import useAuthStore from "../authStore";
-import MidiController from "../services/midi.client";
+// import MidiController from "../services/midi.client";
 // import { keyDict } from "../services/keyDict";
 
 const SynthScene = () => {
