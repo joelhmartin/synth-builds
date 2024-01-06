@@ -6,10 +6,10 @@ import { Group, Mesh, MeshToonMaterial } from "three";
 import { useLocation } from "wouter";
 import useAuthStore from "../authStore";
 import MidiController from "../services/midi.client";
-import { keyDict } from "../services/keyDict";
+// import { keyDict } from "../services/keyDict";
 
 const SynthScene = () => {
-  const midi = new MidiController();
+  // const midi = new MidiController();
   const token = useAuthStore((s) => s.token);
   const { size } = useThree();
   const [location] = useLocation();
@@ -22,7 +22,6 @@ const SynthScene = () => {
   const screenW = size.width / 100;
 
   useEffect(() => {
-    console.log(synthRef.current.children[0].children[19].position)
     if (location === "/") {
       setIsChillin(true);
       gsap.to(synthRef.current.position, { duration: 1, x: -screenW / 2.4,  y: -screenH / 2.4 , z: 0,});
@@ -41,7 +40,8 @@ const SynthScene = () => {
         gsap.to(synthRef.current.scale, { duration: 1, x: 2, y: 2, z: 2 });
       }
     } else if (location === "/login") {
-      gsap.to(synthRef.current.position, { duration: 1, x: 0, y: -4, z: 0 });
+      setIsChillin(true)
+      gsap.to(synthRef.current.position, { duration: 1, x: 0, y: -3, z: 0 });
       gsap.to(synthRef.current.rotation, { duration: 1, x: .2, y: 0, z: 0 });
       gsap.to(synthRef.current.scale, { duration: 1, x: .5, y: .5, z: .5 });
     } else if (location.startsWith("/patches")) {
@@ -50,11 +50,6 @@ const SynthScene = () => {
       gsap.to(synthRef.current.rotation, { duration: 1, x: -5.7, y: 1, z: 0 });
       gsap.to(synthRef.current.scale, { duration: 1, x: 1, y: 1, z: 1 });
     }
-
-    // USEFUL TO SEE THE BREAKDOWN OF THE SYNTH 
-    // console.log(synthRef.current.children[0].children)
-
-
   }, [location, token]);
 
   useFrame((_state, delta) => {
@@ -67,24 +62,22 @@ const SynthScene = () => {
     }
 
     /** KEYS ANIMATIONS */
-    synthRef.current.children[0].children.forEach((element: Group | Mesh, index: number) => {
-      if (element instanceof Group) {
-        if (element.name.includes('Cylinder') && index % 2 == 0)
-        element.rotation.y += delta * ((Math.random() - .5) * 50)
-      }
-      if (element instanceof Mesh && index <= 75 && index >= 16) {
-          if (element.name === keyDict[midi.getNote().note]) {
-            if (midi.getNote().note != -1) {
-              console.log(element.name)
-            }
-            element.position.y = .335
-          } else {
-            element.position.y = 0.3999999463558197
-          }
+    // synthRef.current.children[0].children.forEach((element: Group | Mesh, index: number) => {
+    //   if (element instanceof Group) {
+    //     if (element.name.includes('Cylinder') && index % (2 * Math.random()) < 0.5)
+    //     element.rotation.y += delta * ((Math.random() - .5) * 50)
+    //   }
+    //   if (element instanceof Mesh && index <= 75 && index >= 16) {
+    //     // Add logic for black keys
+    //       if (element.name === keyDict[midi.getNote().note]) {
+    //         element.position.y = .335
+    //       } else {
+    //         element.position.y = 0.3999999463558197
+    //       }
  
-      }
+    //   }
 
-    });
+    // });
   });
 
   useLayoutEffect(() => {
