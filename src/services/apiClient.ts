@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://3.147.63.116:3000/',
+  baseURL: 'https://3.147.63.116:3000/',
 });
 
 class APIClient<T> {
@@ -24,8 +24,8 @@ class APIClient<T> {
   }
 
   postOne = () => {
-    axiosInstance
-    .post<T>(`${this.endpoint}`)
+    return axiosInstance.post<T>(`${this.endpoint}`, {})
+      .then((res: AxiosResponse<T>) => res.data);
   }
 }
 
