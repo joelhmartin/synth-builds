@@ -1,30 +1,15 @@
-# React + TypeScript + Vite
+<!-- 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This site's purpose is to be an area where people can post their patch layouts for synthesizers. I have plans to incorporate
+a simple synth that people can program to sit alongside their synth posts where they can create a basic recreation to show 
+anyone who might be interested, how to create the synth patch on any device. 
 
-Currently, two official plugins are available:
+clone the repository
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+run 'npm install' on your terminal
 
-## Expanding the ESLint configuration
+and then run 'yarn run dev'
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The backend is hosted from an EC2 instance on AWS 
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+-->
