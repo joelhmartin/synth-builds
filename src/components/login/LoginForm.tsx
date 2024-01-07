@@ -1,6 +1,6 @@
 import {
   Button,
-  Flex,
+  HStack,
   Input,
   InputGroup,
   InputLeftElement,
@@ -118,7 +118,7 @@ const LoginForm = (formType: Props) => {
 
           <Spacer />
 
-          <Flex width={'250px'} justifyContent={'space-between'}>
+          <HStack>
             <Button
               variant="outline"
               onClick={() => formType.setFormType("create")}
@@ -126,7 +126,7 @@ const LoginForm = (formType: Props) => {
               Create Account?
             </Button>
             <Button type="submit">Login</Button>
-          </Flex>
+          </HStack>
         </VStack>
       </form>
     </>

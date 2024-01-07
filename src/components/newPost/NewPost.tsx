@@ -97,8 +97,7 @@ function NewPost() {
   return (
     <>
       <VStack width={500}>
-
-        <Box >
+        <Box>
           <FileInputContainer>
             {previewImageUrl && (
               <FileInputPreview
@@ -109,57 +108,58 @@ function NewPost() {
           </FileInputContainer>
         </Box>
 
-        <FormControl onSubmit={handleSubmit(onSubmit)}>
-          <VStack spacing={3}>
-            <Input
-              type="text"
-              {...register("song")}
-              placeholder="Song"
-              _placeholder={{ color: "white", opacity: 0.7 }}
-              variant={"filled"}
-            />
-            <Input
-              type="text"
-              {...register("synth")}
-              placeholder="Synth"
-              _placeholder={{ color: "white", opacity: 0.7 }}
-              variant={"filled"}
-            />
-            <Input
-              type="text"
-              {...register("genre")}
-              placeholder="Genre"
-              _placeholder={{ color: "white", opacity: 0.7 }}
-              variant={"filled"}
-            />
-            <Input
-              type="text"
-              {...register("producer")}
-              placeholder="Producer"
-              _placeholder={{ color: "white", opacity: 0.7 }}
-              variant={"filled"}
-            />
-            <Textarea
-              {...register("description")}
-              placeholder="Description"
-              _placeholder={{ color: "white", opacity: 0.7 }}
-              variant={"filled"}
-            />
+        <FormControl>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <VStack spacing={3}>
+              <Input
+                type="text"
+                {...register("song")}
+                placeholder="Song"
+                _placeholder={{ color: "white", opacity: 0.7 }}
+                variant={"filled"}
+              />
+              <Input
+                type="text"
+                {...register("synth")}
+                placeholder="Synth"
+                _placeholder={{ color: "white", opacity: 0.7 }}
+                variant={"filled"}
+              />
+              <Input
+                type="text"
+                {...register("genre")}
+                placeholder="Genre"
+                _placeholder={{ color: "white", opacity: 0.7 }}
+                variant={"filled"}
+              />
+              <Input
+                type="text"
+                {...register("producer")}
+                placeholder="Producer"
+                _placeholder={{ color: "white", opacity: 0.7 }}
+                variant={"filled"}
+              />
+              <Textarea
+                {...register("description")}
+                placeholder="Description"
+                _placeholder={{ color: "white", opacity: 0.7 }}
+                variant={"filled"}
+              />
 
-            <Flex width={"100%"} >
-              {!previewImageUrl && (
-                <CropperPopUp
-                  onCropComplete={(croppedFile: File) => {
-                    setCroppedImageFile(croppedFile);
-                    handlePreview(croppedFile);
-                  }}
-                />
-              )}
-              <Spacer/>
-              <Button type="submit">Submit</Button>
-            </Flex>
-
-          </VStack>
+              <Flex width={"100%"}>
+                {!previewImageUrl && (
+                  <CropperPopUp
+                    onCropComplete={(croppedFile: File) => {
+                      setCroppedImageFile(croppedFile);
+                      handlePreview(croppedFile);
+                    }}
+                  />
+                )}
+                <Spacer />
+                <Button type="submit">Submit</Button>
+              </Flex>
+            </VStack>
+          </form>
         </FormControl>
       </VStack>
     </>

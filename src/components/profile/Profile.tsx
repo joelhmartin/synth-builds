@@ -3,7 +3,6 @@ import useAuthStore from "../../authStore";
 
 const Profile = () => {
   const user = useAuthStore((s) => s.user);
-  console.log(user);
 
   return (
     <>

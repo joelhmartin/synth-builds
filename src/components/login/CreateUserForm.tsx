@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { IoEyeOff, IoEye } from "react-icons/io5";
 import { MdPassword } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CgNametag } from "react-icons/cg";
 import { MdOutlineEmail } from "react-icons/md";
@@ -72,6 +72,12 @@ const CreateUserForm = (formType: Props) => {
     }
   };
 
+  useEffect(() => {
+    if (isSubmitted) {
+      setLocation("/account");
+    }
+  }, [isSubmitted, setLocation]);
+
   if (whoops)
     return (
       <NewPostError
@@ -84,9 +90,6 @@ const CreateUserForm = (formType: Props) => {
     );
 
   if (isUploading) return <div>Loading...</div>;
-  if (isSubmitted) {
-    setLocation("/account");
-  }
 
   return (
     <>
