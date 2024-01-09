@@ -1,6 +1,6 @@
+import { Button } from "@chakra-ui/react";
 import { Link } from "wouter";
 import useAuthStore from "../authStore";
-import { Button } from "@chakra-ui/react";
 
 const NavBar = () => {
   const { token, logout } = useAuthStore();

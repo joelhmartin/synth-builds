@@ -2,16 +2,19 @@ import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
 import usePatches from "../../hooks/usePatches";
 import { IoArrowBack, IoArrowDown } from "react-icons/io5";
 import useSynthStore from "../../store";
+import { useRef } from "react";
 
 const GenreMenu = () => {
   const { data } = usePatches();
   const setGenre = useSynthStore(s => s.setGenre)
+  const ref = useRef<HTMLElement>()
 
   return (
     <Menu>
       {({ isOpen }) => (
         <>
           <MenuButton
+            ref={ref}
             width={40}
             isActive={isOpen}
             as={Button}

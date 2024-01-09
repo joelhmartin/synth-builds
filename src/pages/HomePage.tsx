@@ -1,4 +1,4 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Show, VStack } from "@chakra-ui/react";
 import SearchBar from "../components/searchBar/SearchBar";
 import SynthGrid from "../components/synthGrid/SynthGrid";
 
@@ -18,8 +18,11 @@ const HomePage = () => {
           <GridItem area="aside" paddingX={5}></GridItem>
         </Show>
         <GridItem paddingX={10}>
+          <VStack>
           <SearchBar />
           <SynthGrid />
+          </VStack>
+
         </GridItem>
       </Grid>
   );

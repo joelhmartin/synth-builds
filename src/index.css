@@ -19,6 +19,7 @@ html {
 }
 
 .header-inner {
+  width:screen;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,6 +48,7 @@ html {
   cursor: pointer;
   width: 8%;
   transition: width .3s;
+  min-width: 100px;
 }
 
 .logo:hover {

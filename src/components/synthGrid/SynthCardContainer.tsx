@@ -8,14 +8,8 @@ interface Props {
 const SynthCardContainer = ({ children }: Props) => {
   return (
     <>
-      {/* <Box
-        height="200px"
-        background="url(/images/matteScrews.png)"
-        backgroundSize="cover"
-      >
-        <Box>{children}</Box>
-      </Box> */}
       <Box
+        maxW={400}
         borderRadius={10}
         overflow="hidden"
         sx={{
