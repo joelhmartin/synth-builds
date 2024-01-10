@@ -18,8 +18,8 @@ const SearchBar = () => {
       <GridItem>
         <SearchText />
       </GridItem>
-      <GridItem py={4}>
-        <Flex gap={3}>
+      <GridItem py={{sm: 4, lg: 0}}>
+        <Flex pl={{sm: 0, lg: 4}} gap={3}>
           <GenreMenu />
           <ProducerMenu />
         </Flex>
